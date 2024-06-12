@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: ClientCheckInV2
+    # OAPI Object Model and Enums for: MobileDeviceWatchOsGeneral
     #
     #
     #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -52,112 +52,60 @@ module Jamf
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  
+    #
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/v2/check-in:GET' needs permissions:
-    #    - Read Computer Check-In
-    #  - '/v2/check-in:PUT' needs permissions:
-    #    - Update Computer Check-In
     #
     #
-    class ClientCheckInV2 < Jamf::OAPIObject
+    #
+    class MobileDeviceWatchOsGeneral < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # Suggested values are 5, 15, 30, or 60. Web interface will not display correctly if not one of those. Minimim is 5, maximum is 60.
-        # @!attribute checkInFrequency
-        #   @return [Integer]
-        checkInFrequency: {
-          class: :integer,
-          format: 'int32'
-        },
-
-        # @!attribute createHooks
+        # @!attribute diagnosticAndUsageReportingEnabled
         #   @return [Boolean]
-        createHooks: {
+        diagnosticAndUsageReportingEnabled: {
           class: :boolean
         },
 
-        # @!attribute hookLog
+        # @!attribute appAnalyticsEnabled
         #   @return [Boolean]
-        hookLog: {
+        appAnalyticsEnabled: {
           class: :boolean
         },
 
-        # @!attribute hookPolicies
+        # @!attribute deviceLocatorServiceEnabled
         #   @return [Boolean]
-        hookPolicies: {
+        deviceLocatorServiceEnabled: {
           class: :boolean
         },
 
-        # @!attribute hookHideRestore
+        # @!attribute doNotDisturbEnabled
         #   @return [Boolean]
-        hookHideRestore: {
+        doNotDisturbEnabled: {
           class: :boolean
         },
 
-        # @!attribute hookMcx
-        #   @return [Boolean]
-        hookMcx: {
-          class: :boolean
+        # @!attribute lastCloudBackupDate
+        #   @return [Jamf::Timestamp]
+        lastCloudBackupDate: {
+          class: Jamf::Timestamp,
+          format: 'date-time'
         },
 
-        # @!attribute backgroundHooks
+        # @!attribute itunesStoreAccountActive
         #   @return [Boolean]
-        backgroundHooks: {
-          class: :boolean
-        },
-
-        # @!attribute hookDisplayStatus
-        #   @return [Boolean]
-        hookDisplayStatus: {
-          class: :boolean
-        },
-
-        # @!attribute createStartupScript
-        #   @return [Boolean]
-        createStartupScript: {
-          class: :boolean
-        },
-
-        # @!attribute startupLog
-        #   @return [Boolean]
-        startupLog: {
-          class: :boolean
-        },
-
-        # @!attribute startupPolicies
-        #   @return [Boolean]
-        startupPolicies: {
-          class: :boolean
-        },
-
-        # @!attribute startupSsh
-        #   @return [Boolean]
-        startupSsh: {
-          class: :boolean
-        },
-
-        # @!attribute startupMcx
-        #   @return [Boolean]
-        startupMcx: {
-          class: :boolean
-        },
-
-        # @!attribute enableLocalConfigurationProfiles
-        #   @return [Boolean]
-        enableLocalConfigurationProfiles: {
+        itunesStoreAccountActive: {
           class: :boolean
         }
 
-      } # end OAPI_PROPERTIES
+      }.merge(Jamf::OAPISchemas::MobileDeviceGeneral::OAPI_PROPERTIES) # end OAPI_PROPERTIES
 
-    end # class ClientCheckInV2
+    end # class MobileDeviceWatchOsGeneral
 
   end # module OAPISchemas
 

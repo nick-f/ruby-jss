@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: AdminAccount
+    # OAPI Object Model and Enums for: GsxTestResponse
     #
     #
     #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -48,7 +48,7 @@ module Jamf
     # Container Objects:
     # Other object models that use this model as the value in one
     # of their attributes.
-    #  - Jamf::OAPISchemas::VppTokenSubscription
+    #  
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
@@ -60,22 +60,36 @@ module Jamf
     #
     #
     #
-    class AdminAccount < Jamf::OAPIObject
+    class GsxTestResponse < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # @!attribute id
-        #   @return [Integer]
-        id: {
-          class: :j_id,
-          identifier: :primary
+        # @!attribute message
+        #   @return [String]
+        message: {
+          class: :string,
+          required: true
+        },
+
+        # @!attribute request
+        #   @return [String]
+        request: {
+          class: :string,
+          required: true
+        },
+
+        # @!attribute response
+        #   @return [String]
+        response: {
+          class: :string,
+          required: true
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class AdminAccount
+    end # class GsxTestResponse
 
   end # module OAPISchemas
 

@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: VppTokenSubscription
+    # OAPI Object Model and Enums for: GsxConnectionUpdate
     #
     #
     #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -52,36 +52,19 @@ module Jamf
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  - Jamf::OAPISchemas::Recipients
-    #  - Jamf::OAPISchemas::AdminAccount
+    #  - Jamf::OAPISchemas::GsxKeystore
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/vpp/subscriptions:GET' needs permissions:
-    #    - Read Volume Purchasing Locations
-    #  - '/vpp/subscriptions/{id}:GET' needs permissions:
-    #    - Read Volume Purchasing Locations
     #
     #
-    class VppTokenSubscription < Jamf::OAPIObject
+    #
+    class GsxConnectionUpdate < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
-
-        # @!attribute id
-        #   @return [Integer]
-        id: {
-          class: :j_id,
-          identifier: :primary
-        },
-
-        # @!attribute name
-        #   @return [String]
-        name: {
-          class: :string
-        },
 
         # @!attribute enabled
         #   @return [Boolean]
@@ -89,34 +72,42 @@ module Jamf
           class: :boolean
         },
 
-        # @!attribute recipients
-        #   @return [Jamf::OAPISchemas::Recipients]
-        recipients: {
-          class: Jamf::OAPISchemas::Recipients
-        },
-
-        # @!attribute adminAccounts
-        #   @return [Array<Jamf::OAPISchemas::AdminAccount>]
-        adminAccounts: {
-          class: Jamf::OAPISchemas::AdminAccount,
-          multi: true
-        },
-
-        # @!attribute siteID
-        #   @return [Integer]
-        siteID: {
-          class: :integer
-        },
-
-        # @!attribute siteName
+        # @!attribute username
         #   @return [String]
-        siteName: {
+        username: {
           class: :string
+        },
+
+        # @!attribute serviceAccountNo
+        #   @return [String]
+        serviceAccountNo: {
+          class: :string,
+          max_length: 10
+        },
+
+        # @!attribute shipToNo
+        #   @return [String]
+        shipToNo: {
+          class: :string,
+          max_length: 10
+        },
+
+        # @!attribute token
+        #   @return [String]
+        token: {
+          class: :string,
+          writeonly: true
+        },
+
+        # @!attribute gsxKeystore
+        #   @return [Jamf::OAPISchemas::GsxKeystore]
+        gsxKeystore: {
+          class: Jamf::OAPISchemas::GsxKeystore
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class VppTokenSubscription
+    end # class GsxConnectionUpdate
 
   end # module OAPISchemas
 

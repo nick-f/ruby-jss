@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,13 +30,13 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: IosDetailsV2
+    # OAPI Object Model and Enums for: WatchOsDetailsV2
     #
     # Description of this class from the OAPI Schema:
-    #   will be populated if the type is ios.
+    #   will be populated if the type is watchos.
     #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -53,14 +53,9 @@ module Jamf
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  - Jamf::OAPISchemas::IdAndNameV2
-    #  - Jamf::OAPISchemas::PurchasingV2
     #  - Jamf::OAPISchemas::SecurityV2
-    #  - Jamf::OAPISchemas::NetworkV2
-    #  - Jamf::OAPISchemas::MobileDeviceServiceSubscriptions
     #  - Jamf::OAPISchemas::MobileDeviceApplication
     #  - Jamf::OAPISchemas::MobileDeviceCertificateV2
-    #  - Jamf::OAPISchemas::MobileDeviceEbook
     #  - Jamf::OAPISchemas::ConfigurationProfile
     #  - Jamf::OAPISchemas::MobileDeviceProvisioningProfiles
     #  - Jamf::OAPISchemas::MobileDeviceAttachmentV2
@@ -71,7 +66,7 @@ module Jamf
     #
     #
     #
-    class IosDetailsV2 < Jamf::OAPIObject
+    class WatchOsDetailsV2 < Jamf::OAPIObject
 
       
 
@@ -107,13 +102,6 @@ module Jamf
           class: :integer
         },
 
-        # @!attribute lastBackupTimestamp
-        #   @return [Jamf::Timestamp]
-        lastBackupTimestamp: {
-          class: Jamf::Timestamp,
-          format: 'date-time'
-        },
-
         # @!attribute capacityMb
         #   @return [Integer]
         capacityMb: {
@@ -132,12 +120,6 @@ module Jamf
           class: :integer
         },
 
-        # @!attribute shared
-        #   @return [Boolean]
-        shared: {
-          class: :boolean
-        },
-
         # @!attribute deviceLocatorServiceEnabled
         #   @return [Boolean]
         deviceLocatorServiceEnabled: {
@@ -150,23 +132,11 @@ module Jamf
           class: :boolean
         },
 
-        # @!attribute cloudBackupEnabled
-        #   @return [Boolean]
-        cloudBackupEnabled: {
-          class: :boolean
-        },
-
         # @!attribute lastCloudBackupTimestamp
         #   @return [Jamf::Timestamp]
         lastCloudBackupTimestamp: {
           class: Jamf::Timestamp,
           format: 'date-time'
-        },
-
-        # @!attribute locationServicesEnabled
-        #   @return [Boolean]
-        locationServicesEnabled: {
-          class: :boolean
         },
 
         # @!attribute iTunesStoreAccountActive
@@ -181,35 +151,10 @@ module Jamf
           class: :boolean
         },
 
-        # @!attribute computer
-        #   @return [Jamf::OAPISchemas::IdAndNameV2]
-        computer: {
-          class: Jamf::OAPISchemas::IdAndNameV2
-        },
-
-        # @!attribute purchasing
-        #   @return [Jamf::OAPISchemas::PurchasingV2]
-        purchasing: {
-          class: Jamf::OAPISchemas::PurchasingV2
-        },
-
         # @!attribute security
         #   @return [Jamf::OAPISchemas::SecurityV2]
         security: {
           class: Jamf::OAPISchemas::SecurityV2
-        },
-
-        # @!attribute network
-        #   @return [Jamf::OAPISchemas::NetworkV2]
-        network: {
-          class: Jamf::OAPISchemas::NetworkV2
-        },
-
-        # @!attribute serviceSubscriptions
-        #   @return [Array<Jamf::OAPISchemas::MobileDeviceServiceSubscriptions>]
-        serviceSubscriptions: {
-          class: Jamf::OAPISchemas::MobileDeviceServiceSubscriptions,
-          multi: true
         },
 
         # @!attribute applications
@@ -223,13 +168,6 @@ module Jamf
         #   @return [Array<Jamf::OAPISchemas::MobileDeviceCertificateV2>]
         certificates: {
           class: Jamf::OAPISchemas::MobileDeviceCertificateV2,
-          multi: true
-        },
-
-        # @!attribute ebooks
-        #   @return [Array<Jamf::OAPISchemas::MobileDeviceEbook>]
-        ebooks: {
-          class: Jamf::OAPISchemas::MobileDeviceEbook,
           multi: true
         },
 
@@ -256,7 +194,7 @@ module Jamf
 
       } # end OAPI_PROPERTIES
 
-    end # class IosDetailsV2
+    end # class WatchOsDetailsV2
 
   end # module OAPISchemas
 

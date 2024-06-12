@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,13 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: Recipient
+    # OAPI Object Model and Enums for: DownloadUrl
     #
+    # Description of this class from the OAPI Schema:
+    #   The URL to download a file from.
     #
-    #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -48,7 +49,7 @@ module Jamf
     # Container Objects:
     # Other object models that use this model as the value in one
     # of their attributes.
-    #  - Jamf::OAPISchemas::Recipients
+    #  
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
@@ -57,37 +58,25 @@ module Jamf
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
+    #  - '/v1/jcds/files/{fileName}:GET' needs permissions:
+    #    - Read Jamf Content Distribution Server Files
     #
     #
-    #
-    class Recipient < Jamf::OAPIObject
+    class DownloadUrl < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # @!attribute id
-        #   @return [Integer]
-        id: {
-          class: :j_id,
-          identifier: :primary
-        },
-
-        # @!attribute realName
+        # @!attribute uri
         #   @return [String]
-        realName: {
-          class: :string
-        },
-
-        # @!attribute email
-        #   @return [String]
-        email: {
+        uri: {
           class: :string
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class Recipient
+    end # class DownloadUrl
 
   end # module OAPISchemas
 

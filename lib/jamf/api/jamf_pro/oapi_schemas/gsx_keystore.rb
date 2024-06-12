@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: VppAdminAccount
+    # OAPI Object Model and Enums for: GsxKeystore
     #
     #
     #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -48,71 +48,69 @@ module Jamf
     # Container Objects:
     # Other object models that use this model as the value in one
     # of their attributes.
-    #  
+    #  - Jamf::OAPISchemas::GsxConnection
+    #  - Jamf::OAPISchemas::GsxConnectionUpdate
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  - Jamf::OAPISchemas::Site
+    #  
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/vpp/admin-accounts:GET' needs permissions:
-    #    - Read Volume Purchasing Locations
     #
     #
-    class VppAdminAccount < Jamf::OAPIObject
+    #
+    class GsxKeystore < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # @!attribute id
-        #   @return [Integer]
-        id: {
-          class: :j_id,
-          identifier: :primary
-        },
-
         # @!attribute name
         #   @return [String]
         name: {
-          class: :string
+          class: :string,
+          required: true
         },
 
-        # @!attribute licenseCount
+        # @!attribute [r] expirationEpoch
         #   @return [Integer]
-        licenseCount: {
-          class: :integer
+        expirationEpoch: {
+          class: :integer,
+          format: 'int64',
+          readonly: true
         },
 
-        # @!attribute usedLicenseCount
-        #   @return [Integer]
-        usedLicenseCount: {
-          class: :integer
-        },
-
-        # @!attribute location
+        # @!attribute [r] errorMessage
         #   @return [String]
-        location: {
-          class: :string
+        errorMessage: {
+          class: :string,
+          readonly: true
         },
 
-        # @!attribute expirationDate
+        # The base 64 encoded of the GSX Connection keystore.
+        # @!attribute keystoreBytes
         #   @return [String]
-        expirationDate: {
-          class: :string
+        keystoreBytes: {
+          class: :string,
+          format: 'byte',
+          writeonly: true,
+          pattern: Regexp.new('^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$')
         },
 
-        # @!attribute site
-        #   @return [Jamf::OAPISchemas::Site]
-        site: {
-          class: Jamf::OAPISchemas::Site
+        # @!attribute keystorePassword
+        #   @return [String]
+        keystorePassword: {
+          class: :string,
+          required: true,
+          format: 'password',
+          writeonly: true
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class VppAdminAccount
+    end # class GsxKeystore
 
   end # module OAPISchemas
 

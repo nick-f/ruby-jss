@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: SsoSettings
+    # OAPI Object Model and Enums for: SsoSettingsV1
     #
     #
     #
-    # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # This class was automatically generated from the api/schema
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -63,7 +63,7 @@ module Jamf
     #    - Update SSO Settings
     #
     #
-    class SsoSettings < Jamf::OAPIObject
+    class SsoSettingsV1 < Jamf::OAPIObject
 
       # Enums used by this class or others
 
@@ -246,7 +246,7 @@ module Jamf
 
       } # end OAPI_PROPERTIES
 
-    end # class SsoSettings
+    end # class SsoSettingsV1
 
   end # module OAPISchemas
 
