@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -35,7 +35,7 @@ module Jamf
     #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -77,6 +77,8 @@ module Jamf
     #    - Update JSS URL
     #  - '/v1/mobile-device-prestages/{id}/history:POST' needs permissions:
     #    - Update Mobile Device PreStage Enrollments
+    #  - '/v1/packages/{id}/history:POST' needs permissions:
+    #    - Update Packages
     #  - '/v1/parent-app/history:POST' needs permissions:
     #    - Update Parent App Settings
     #  - '/v1/reenrollment/history:POST' needs permissions:

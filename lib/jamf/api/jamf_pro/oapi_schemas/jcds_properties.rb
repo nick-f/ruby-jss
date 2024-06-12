@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,13 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: Initialize
+    # OAPI Object Model and Enums for: JcdsProperties
     #
-    # Description of this class from the OAPI Schema:
-    #   Initial Jamf Pro setup data
+    #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -58,75 +57,37 @@ module Jamf
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/system/initialize:POST' needs permissions:
-    #    - Unknown
+    #  - '/v1/jcds/properties:GET' needs permissions:
+    #    - Read Jamf Content Distribution Server Files
     #
     #
-    class Initialize < Jamf::OAPIObject
+    class JcdsProperties < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # @!attribute activationCode
-        #   @return [String]
-        activationCode: {
-          class: :string,
-          required: true,
-          min_length: 39,
-          max_length: 39
-        },
-
-        # @!attribute institutionName
-        #   @return [String]
-        institutionName: {
-          class: :string,
-          required: true,
-          min_length: 1
-        },
-
-        # @!attribute isEulaAccepted
+        # @!attribute jcds2Enabled
         #   @return [Boolean]
-        isEulaAccepted: {
-          class: :boolean,
-          required: true
+        jcds2Enabled: {
+          class: :boolean
         },
 
-        # @!attribute username
-        #   @return [String]
-        username: {
-          class: :string,
-          required: true,
-          min_length: 1
+        # @!attribute fileStreamEndpointEnabled
+        #   @return [Boolean]
+        fileStreamEndpointEnabled: {
+          class: :boolean
         },
 
-        # @!attribute password
-        #   @return [String]
-        password: {
-          class: :string,
-          required: true,
-          format: 'password',
-          writeonly: true,
-          min_length: 1
-        },
-
-        # @!attribute email
-        #   @return [String]
-        email: {
-          class: :string
-        },
-
-        # @!attribute jssUrl
-        #   @return [String]
-        jssUrl: {
-          class: :string,
-          required: true,
-          min_length: 1
+        # @!attribute maxChunkSize
+        #   @return [Integer]
+        maxChunkSize: {
+          class: :integer
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class Initialize
+    end # class JcdsProperties
 
   end # module OAPISchemas
 

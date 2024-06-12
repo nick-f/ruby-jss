@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: VppAdminAccount
+    # OAPI Object Model and Enums for: OnboardingEligibleItem
     #
     #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -48,71 +48,56 @@ module Jamf
     # Container Objects:
     # Other object models that use this model as the value in one
     # of their attributes.
-    #  
+    #  - Jamf::OAPISchemas::OnboardingEligibleItemsSearchResult
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  - Jamf::OAPISchemas::Site
+    #  
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/vpp/admin-accounts:GET' needs permissions:
-    #    - Read Volume Purchasing Locations
     #
     #
-    class VppAdminAccount < Jamf::OAPIObject
+    #
+    class OnboardingEligibleItem < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
         # @!attribute id
-        #   @return [Integer]
+        #   @return [String]
         id: {
           class: :j_id,
+          required: true,
           identifier: :primary
         },
 
         # @!attribute name
         #   @return [String]
         name: {
-          class: :string
+          class: :string,
+          required: true
         },
 
-        # @!attribute licenseCount
-        #   @return [Integer]
-        licenseCount: {
-          class: :integer
-        },
-
-        # @!attribute usedLicenseCount
-        #   @return [Integer]
-        usedLicenseCount: {
-          class: :integer
-        },
-
-        # @!attribute location
+        # @!attribute scopeDescription
         #   @return [String]
-        location: {
-          class: :string
+        scopeDescription: {
+          class: :string,
+          required: true
         },
 
-        # @!attribute expirationDate
+        # @!attribute siteDescription
         #   @return [String]
-        expirationDate: {
-          class: :string
-        },
-
-        # @!attribute site
-        #   @return [Jamf::OAPISchemas::Site]
-        site: {
-          class: Jamf::OAPISchemas::Site
+        siteDescription: {
+          class: :string,
+          required: true
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class VppAdminAccount
+    end # class OnboardingEligibleItem
 
   end # module OAPISchemas
 

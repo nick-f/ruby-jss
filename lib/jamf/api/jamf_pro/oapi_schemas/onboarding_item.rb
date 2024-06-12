@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: VppTokenSubscription
+    # OAPI Object Model and Enums for: OnboardingItem
     #
     #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -48,75 +48,92 @@ module Jamf
     # Container Objects:
     # Other object models that use this model as the value in one
     # of their attributes.
-    #  
+    #  - Jamf::OAPISchemas::OnboardingConfiguration
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  - Jamf::OAPISchemas::Recipients
-    #  - Jamf::OAPISchemas::AdminAccount
+    #  
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/vpp/subscriptions:GET' needs permissions:
-    #    - Read Volume Purchasing Locations
-    #  - '/vpp/subscriptions/{id}:GET' needs permissions:
-    #    - Read Volume Purchasing Locations
     #
     #
-    class VppTokenSubscription < Jamf::OAPIObject
+    #
+    class OnboardingItem < Jamf::OAPIObject
 
-      
+      # Enums used by this class or others
+
+      SELF_SERVICE_ENTITY_TYPE_OPTIONS = [
+        'OS_X_POLICY',
+        'OS_X_CONFIG_PROFILE',
+        'OS_X_MAC_APP',
+        'OS_X_APP_INSTALLER',
+        'OS_X_EBOOK',
+        'OS_X_PATCH_POLICY',
+        'UNKNOWN'
+      ]
 
       OAPI_PROPERTIES = {
 
         # @!attribute id
-        #   @return [Integer]
+        #   @return [String]
         id: {
           class: :j_id,
+          nil_ok: true,
           identifier: :primary
         },
 
-        # @!attribute name
+        # The id of the Jamf Pro object that should be added to the onboarding workflow for end users.
+        # Use this in conjunction with the selfServiceEntityType. For example, if the policy with id 132
+        # should be added to onboarding, then entityId should be 132 and selfServiceEntityType should be 
+        # OS_X_POLICY.
+        # @!attribute entityId
         #   @return [String]
-        name: {
-          class: :string
+        entityId: {
+          class: :string,
+          required: true
         },
 
-        # @!attribute enabled
-        #   @return [Boolean]
-        enabled: {
-          class: :boolean
+        # @!attribute [r] entityName
+        #   @return [String]
+        entityName: {
+          class: :string,
+          readonly: true
         },
 
-        # @!attribute recipients
-        #   @return [Jamf::OAPISchemas::Recipients]
-        recipients: {
-          class: Jamf::OAPISchemas::Recipients
+        # @!attribute [r] scopeDescription
+        #   @return [String]
+        scopeDescription: {
+          class: :string,
+          readonly: true
         },
 
-        # @!attribute adminAccounts
-        #   @return [Array<Jamf::OAPISchemas::AdminAccount>]
-        adminAccounts: {
-          class: Jamf::OAPISchemas::AdminAccount,
-          multi: true
+        # @!attribute [r] siteDescription
+        #   @return [String]
+        siteDescription: {
+          class: :string,
+          readonly: true
         },
 
-        # @!attribute siteID
+        # @!attribute selfServiceEntityType
+        #   @return [String]
+        selfServiceEntityType: {
+          class: :string,
+          required: true,
+          enum: SELF_SERVICE_ENTITY_TYPE_OPTIONS
+        },
+
+        # @!attribute priority
         #   @return [Integer]
-        siteID: {
-          class: :integer
-        },
-
-        # @!attribute siteName
-        #   @return [String]
-        siteName: {
-          class: :string
+        priority: {
+          class: :integer,
+          required: true
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class VppTokenSubscription
+    end # class OnboardingItem
 
   end # module OAPISchemas
 

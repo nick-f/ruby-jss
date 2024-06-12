@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: ClientCheckInV2
+    # OAPI Object Model and Enums for: Credentials
     #
     #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -57,107 +57,72 @@ module Jamf
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/v2/check-in:GET' needs permissions:
-    #    - Read Computer Check-In
-    #  - '/v2/check-in:PUT' needs permissions:
-    #    - Update Computer Check-In
+    #  - '/v1/jcds/files:POST' needs permissions:
+    #    - Create Jamf Content Distribution Server Files
+    #  - '/v1/jcds/renew-credentials:POST' needs permissions:
+    #    - Create Jamf Content Distribution Server Files
     #
     #
-    class ClientCheckInV2 < Jamf::OAPIObject
+    class Credentials < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # Suggested values are 5, 15, 30, or 60. Web interface will not display correctly if not one of those. Minimim is 5, maximum is 60.
-        # @!attribute checkInFrequency
+        # @!attribute accessKeyID
+        #   @return [String]
+        accessKeyID: {
+          class: :string,
+          format: 'password'
+        },
+
+        # @!attribute expiration
         #   @return [Integer]
-        checkInFrequency: {
+        expiration: {
           class: :integer,
-          format: 'int32'
+          format: 'int64'
         },
 
-        # @!attribute createHooks
-        #   @return [Boolean]
-        createHooks: {
-          class: :boolean
+        # @!attribute secretAccessKey
+        #   @return [String]
+        secretAccessKey: {
+          class: :string,
+          format: 'password'
         },
 
-        # @!attribute hookLog
-        #   @return [Boolean]
-        hookLog: {
-          class: :boolean
+        # @!attribute sessionToken
+        #   @return [String]
+        sessionToken: {
+          class: :string
         },
 
-        # @!attribute hookPolicies
-        #   @return [Boolean]
-        hookPolicies: {
-          class: :boolean
+        # @!attribute region
+        #   @return [String]
+        region: {
+          class: :string
         },
 
-        # @!attribute hookHideRestore
-        #   @return [Boolean]
-        hookHideRestore: {
-          class: :boolean
+        # @!attribute bucketName
+        #   @return [String]
+        bucketName: {
+          class: :string
         },
 
-        # @!attribute hookMcx
-        #   @return [Boolean]
-        hookMcx: {
-          class: :boolean
+        # @!attribute path
+        #   @return [String]
+        path: {
+          class: :string
         },
 
-        # @!attribute backgroundHooks
-        #   @return [Boolean]
-        backgroundHooks: {
-          class: :boolean
-        },
-
-        # @!attribute hookDisplayStatus
-        #   @return [Boolean]
-        hookDisplayStatus: {
-          class: :boolean
-        },
-
-        # @!attribute createStartupScript
-        #   @return [Boolean]
-        createStartupScript: {
-          class: :boolean
-        },
-
-        # @!attribute startupLog
-        #   @return [Boolean]
-        startupLog: {
-          class: :boolean
-        },
-
-        # @!attribute startupPolicies
-        #   @return [Boolean]
-        startupPolicies: {
-          class: :boolean
-        },
-
-        # @!attribute startupSsh
-        #   @return [Boolean]
-        startupSsh: {
-          class: :boolean
-        },
-
-        # @!attribute startupMcx
-        #   @return [Boolean]
-        startupMcx: {
-          class: :boolean
-        },
-
-        # @!attribute enableLocalConfigurationProfiles
-        #   @return [Boolean]
-        enableLocalConfigurationProfiles: {
-          class: :boolean
+        # @!attribute uuid
+        #   @return [String]
+        uuid: {
+          class: :string
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class ClientCheckInV2
+    end # class Credentials
 
   end # module OAPISchemas
 

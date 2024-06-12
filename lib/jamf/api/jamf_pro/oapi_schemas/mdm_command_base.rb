@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: Recipients
+    # OAPI Object Model and Enums for: MdmCommandBase
     #
     #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -48,11 +48,11 @@ module Jamf
     # Container Objects:
     # Other object models that use this model as the value in one
     # of their attributes.
-    #  - Jamf::OAPISchemas::VppTokenSubscription
+    #  
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  - Jamf::OAPISchemas::Recipient
+    #  - Jamf::OAPISchemas::MdmCommandType
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
@@ -60,22 +60,22 @@ module Jamf
     #
     #
     #
-    class Recipients < Jamf::OAPIObject
+    class MdmCommandBase < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # @!attribute recipientList
-        #   @return [Array<Jamf::OAPISchemas::Recipient>]
-        recipientList: {
-          class: Jamf::OAPISchemas::Recipient,
-          multi: true
+        # @!attribute commandType
+        #   @return [Jamf::OAPISchemas::MdmCommandType]
+        commandType: {
+          class: Jamf::OAPISchemas::MdmCommandType,
+          required: true
         }
 
       } # end OAPI_PROPERTIES
 
-    end # class Recipients
+    end # class MdmCommandBase
 
   end # module OAPISchemas
 

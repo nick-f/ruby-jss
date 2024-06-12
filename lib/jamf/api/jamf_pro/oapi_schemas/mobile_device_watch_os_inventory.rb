@@ -1,4 +1,4 @@
-# Copyright 2023 Pixar
+# Copyright 2024 Pixar
 #
 #    Licensed under the Apache License, Version 2.0 (the "Apache License")
 #    with the following modification; you may not use this file except in
@@ -30,12 +30,12 @@ module Jamf
   module OAPISchemas
 
 
-    # OAPI Object Model and Enums for: JamfNationCredentials
+    # OAPI Object Model and Enums for: MobileDeviceWatchOsInventory
     #
     #
     #
     # This class was automatically genereated from the api/schema
-    # URL path on a Jamf Pro server version 10.50.0-t1693149930
+    # URL path on a Jamf Pro server version 11.5.1-t1716233166
     #
     # This class may be used directly, e.g instances of other classes may
     # use instances of this class as one of their own properties/attributes.
@@ -52,39 +52,42 @@ module Jamf
     #
     # Sub Objects:
     # Other object models used by this model's attributes.
-    #  
+    #
     #
     # Endpoints and Privileges:
     # API endpoints and HTTP operations that use this object
     # model, and the Jamf Pro privileges needed to access them.
-    #  - '/v1/csa/token:PUT' needs permissions:
-    #    - Update Cloud Services Settings
-    #  - '/v1/csa/token:POST' needs permissions:
-    #    - Update Cloud Services Settings
     #
     #
-    class JamfNationCredentials < Jamf::OAPIObject
+    #
+    class MobileDeviceWatchOsInventory < Jamf::OAPIObject
 
       
 
       OAPI_PROPERTIES = {
 
-        # @!attribute emailAddress
-        #   @return [String]
-        emailAddress: {
-          class: :string
+        # @!attribute general
+        #   @return [Jamf::OAPISchemas::MobileDeviceWatchOsGeneral]
+        general: {
+          class: Jamf::OAPISchemas::MobileDeviceWatchOsGeneral
         },
 
-        # @!attribute password
-        #   @return [String]
-        password: {
-          class: :string,
-          format: 'password'
+        # @!attribute security
+        #   @return [Jamf::OAPISchemas::MobileDeviceSecurity]
+        security: {
+          class: Jamf::OAPISchemas::MobileDeviceSecurity
+        },
+
+        # @!attribute provisioningProfiles
+        #   @return [Array<Jamf::OAPISchemas::MobileDeviceProvisioningProfiles>]
+        provisioningProfiles: {
+          class: Jamf::OAPISchemas::MobileDeviceProvisioningProfiles,
+          multi: true
         }
 
-      } # end OAPI_PROPERTIES
+      }.merge(Jamf::OAPISchemas::MobileDeviceInventory::OAPI_PROPERTIES) # end OAPI_PROPERTIES
 
-    end # class JamfNationCredentials
+    end # class MobileDeviceWatchOsInventory
 
   end # module OAPISchemas
 
